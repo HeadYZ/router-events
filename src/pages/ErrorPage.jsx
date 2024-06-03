@@ -6,9 +6,10 @@ function ErrorPage() {
 
 	let title = 'An error occured!'
 	let message = 'Something went wrong!'
+
 	console.log(error)
-	if ((error.status === 404)) message = 'Could not find page.'
-	if ((error.status === 500)) message = JSON.parse(error.data).message
+	if (error.status === 404) message = 'Could not find page.'
+	if (error.status === 500) message = error.data.message
 
 	return (
 		<>
